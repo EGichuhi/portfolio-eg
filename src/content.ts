@@ -9,9 +9,9 @@ export const profile = {
     'I connect scientific problem-solving with data-driven engineering, turning complex questions into practical technology and research workflows.',
   about:
     'My training in nanotechnology engineering gives me a materials-first view of technical problems. Across research projects, data analysis, and technology operations, I have worked where experiments meet computation and where systems need to work in practice. I am interested in applied research and engineering roles that bring those perspectives together.',
-  email: '',
-  linkedin: '',
-  github: '',
+  email: 'EUNICE.GWANJA@GMAIL.COM',
+  linkedin: 'https://www.linkedin.com/in/eunicegichuhi',
+  github: 'https://github.com/EGichuhi',
   resumePath: '',
 }
 
