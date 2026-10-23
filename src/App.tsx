@@ -21,6 +21,17 @@ const navigation = [
   ['Contact', '#contact'],
 ]
 
+function renderHighlightedText(text: string, highlights: string[] = []) {
+  if (!highlights.length) return text
+
+  const escapedHighlights = highlights.map((highlight) =>
+    highlight.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'),
+  )
+  return text.split(new RegExp(`(${escapedHighlights.join('|')})`, 'g')).map((part, index) =>
+    highlights.includes(part) ? <strong key={index}>{part}</strong> : part,
+  )
+}
+
 function ProjectDiagram({ type }: { type: string }) {
   if (type === 'pipeline') {
     return (
@@ -196,7 +207,11 @@ function App() {
                   <div className="experience-marker"><span>{String(index + 1).padStart(2, '0')}</span></div>
                   <div className="experience-role">
                     <div className="role-heading"><div><h3>{item.organization}</h3><p>{item.title}</p></div><time>{item.dates}</time></div>
-                    <p className="role-description">{item.description}</p>
+                    <ul className="role-description">
+                      {item.bullets.map((bullet) => (
+                        <li key={bullet}>{renderHighlightedText(bullet, item.highlights)}</li>
+                      ))}
+                    </ul>
                     <ul className="tag-list" aria-label="Tools and focus areas">{item.tools.map((tool) => <li key={tool}>{tool}</li>)}</ul>
                   </div>
                 </article>
@@ -228,11 +243,36 @@ function App() {
                       {isOpen && (
                         <div className="project-detail" id={`project-detail-${project.number}`}>
                           <div className="detail-block"><h4>Overview</h4><p>{project.context}</p></div>
-                          <div className="detail-block"><h4>Problem</h4><p>{project.problem}</p></div>
-                          <div className="detail-block"><h4>Technical approach</h4><p>{project.approach}</p></div>
-                          <div className="detail-block"><h4>Tools &amp; technologies</h4><ul className="tag-list">{project.tools.map((tool) => <li key={tool}>{tool}</li>)}</ul></div>
-                          <div className="detail-block"><h4>Results &amp; findings</h4><p>{project.findings}</p></div>
-                          <div className="detail-block"><h4>What I learned</h4><p>{project.learning}</p></div>
+                          {'detailSections' in project ? (
+                            <>
+                              <div className="detail-block"><h4>{'researchQuestion' in project ? 'Problem statement' : 'Engineering challenge'}</h4><p>{project.problem}</p></div>
+                              {'researchQuestion' in project && <div className="detail-block"><h4>Research question</h4><p>{project.researchQuestion}</p></div>}
+                              <div className="detail-block"><h4>Technical approach</h4><p>{project.approach}</p></div>
+                              {project.detailSections?.map((section) => (
+                                <div className="detail-block" key={section.heading}>
+                                  <h4>{section.heading}</h4>
+                                  {'paragraphs' in section && section.paragraphs?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                                  {'bullets' in section && section.bullets && <ul>{section.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>}
+                                  {section.subsections?.map((subsection) => (
+                                    <div className="detail-subsection" key={subsection.heading}>
+                                      <h5>{subsection.heading}</h5>
+                                      <ul>{subsection.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
+                                    </div>
+                                  ))}
+                                </div>
+                              ))}
+                              <div className="detail-block"><h4>Results and findings</h4><p>{project.findings}</p></div>
+                              <div className="detail-block"><h4>Key takeaways</h4><p>{project.learning}</p></div>
+                            </>
+                          ) : (
+                            <>
+                              <div className="detail-block"><h4>Problem</h4><p>{project.problem}</p></div>
+                              <div className="detail-block"><h4>Technical approach</h4><p>{project.approach}</p></div>
+                              <div className="detail-block"><h4>Tools &amp; technologies</h4><ul className="tag-list">{project.tools.map((tool) => <li key={tool}>{tool}</li>)}</ul></div>
+                              <div className="detail-block"><h4>Results &amp; findings</h4><p>{project.findings}</p></div>
+                              <div className="detail-block"><h4>What I learned</h4><p>{project.learning}</p></div>
+                            </>
+                          )}
                         </div>
                       )}
                     </div>
