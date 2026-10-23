@@ -76,10 +76,10 @@ export const projects = [
     category: 'COMPUTATIONAL MATERIALS SCIENCE · MACHINE LEARNING · NANOBIOTECHNOLOGY · DRUG DELIVERY',
     title: 'Machine Learning-Guided Optimization of PLGA Nanoparticles for Breast Cancer Drug Delivery',
     summary:
-      'A predictive framework using literature-derived formulation data to explore how PLGA material properties, drug characteristics, and manufacturing parameters relate to nanoparticle outcomes for breast cancer drug delivery.',
+      'Analyzed published PLGA formulation data to explore factors associated with nanoparticle properties relevant to breast cancer drug delivery.',
     type: 'pipeline',
     context:
-      'This undergraduate project explored how machine learning could help identify promising poly(lactic-co-glycolic acid) (PLGA) nanoparticle formulations for breast cancer drug delivery without relying exclusively on repeated laboratory experiments. Literature-derived data were combined and prepared to investigate relationships between polymer properties, drug characteristics, manufacturing parameters, and encapsulation efficiency, particle size, and drug loading.',
+      'This undergraduate project examined whether existing research data could help researchers screen PLGA nanoparticle formulations and prioritize candidates for further testing.',
     problem:
       'PLGA nanoparticle performance depends on interacting formulation variables, but published studies use different methods and reporting formats. Trial-and-error optimization can require substantial laboratory time and materials.',
     researchQuestion:
@@ -270,10 +270,10 @@ export const projects = [
     category: 'MATERIALS ENGINEERING · NANOMATERIALS · POLYMER FORMULATION · OPTICAL SYSTEMS',
     title: 'Development of a UCNP–PMMA Optical Upconversion Lens',
     summary:
-      'Developed and evaluated a PMMA optical coating containing purchased NaYF₄:Er³⁺ upconversion nanoparticles, then integrated the lens element into a three-lens monocular prototype.',
+      'Evaluated a PMMA coating with purchased NaYF₄:Er³⁺ nanoparticles and integrated the coated lens into a monocular prototype.',
     type: 'optics',
     context:
-      'Investigated near-infrared-to-visible upconversion using purchased NaYF₄:Er³⁺ nanoparticles in a PMMA lens coating. Formulations were characterized and a selected coating was integrated into a three-lens monocular prototype.',
+      'The project investigated whether a nanoparticle–polymer composite could convert near-infrared excitation into visible emission in a portable optical system.',
     problem:
       'Balance nanoparticle loading for optical activity against transparency, aggregation, and scattering while integrating the film into a portable optical system. Design targets included at least 85% transparency, at least 5% efficiency, 10–50 mm focal length, under 15 cm length, under 3 cm diameter, under 100 g mass, and lens cost below CAD $50; these were requirements, not verified outcomes.',
     approach:
@@ -431,19 +431,19 @@ export const projects = [
     category: 'MICROFLUIDICS · CAD · SIMULATION · EXPERIMENTAL VALIDATION',
     title: 'Microfluidic Device Design & Experimental Validation',
     summary:
-      'Designed a Y-junction and serpentine microfluidic device in AutoCAD, evaluated it in COMSOL Multiphysics, then fabricated and tested it in a laboratory.',
+      'Designed a compact Y-junction and serpentine microchannel, then simulated, fabricated, and tested the device.',
     type: 'microfluidic',
     context:
-      'Designed a microfluidic device featuring a Y-shaped starting junction and a serpentine channel layout. The design was developed in AutoCAD, transferred to COMSOL Multiphysics for simulation, and then fabricated and tested in a laboratory to connect digital design and computational evaluation with physical observation in a compact microchannel network.',
+      'This project connected computer-aided design and computational evaluation with laboratory testing of a fabricated microfluidic device.',
     problem:
-      'A microfluidic design needs to be evaluated against its intended flow behavior, geometry, and operating constraints before fabrication. The device geometry incorporated a Y-shaped junction as the starting section of the channel network, a serpentine channel to create a winding flow path within a compact footprint, and compact device geometry designed to make fluid behaviour observable during laboratory testing.',
+      'The engineering challenge was to assess expected fluid behaviour and make it observable in a compact device before and during physical testing.',
     approach:
-      'The work involved defining a design objective and using COMSOL simulation to examine relevant engineering considerations. The device geometry was created in AutoCAD and transferred into COMSOL Multiphysics to evaluate its expected behaviour before fabrication.',
+      'Created the channel layout in AutoCAD, evaluated its expected behaviour in COMSOL Multiphysics, then fabricated the device and documented the laboratory test with images.',
     tools: ['AutoCAD', 'COMSOL Multiphysics', '3D CAD modelling', 'Microfluidic design', 'Simulation-based evaluation', 'Device fabrication', 'Laboratory experimentation', 'Experimental observation'],
     findings:
-      'Following simulation, the device was fabricated and used in a laboratory experiment. Images documented the observed behaviour within the microchannels, and experimental observations were consistent with the behaviour expected from the COMSOL simulation, providing a practical comparison between the digital model and fabricated design.',
+      'Observed flow behaviour was consistent with the COMSOL simulation, providing a practical comparison between the model and fabricated device.',
     learning:
-      'Model assumptions and boundary conditions are central to making a simulation useful for engineering decisions. The project demonstrated an end-to-end engineering workflow, from CAD design and computational evaluation to fabrication and experimental testing. It strengthened my experience in 3D device design, multiphysics simulation, and validating engineering designs through physical experiments.',
+      'The project provided end-to-end experience in CAD, multiphysics simulation, fabrication, and experimental validation. It also reinforced the importance of model assumptions and boundary conditions when interpreting simulation results.',
     visualLabel: 'Microchannel layout',
   },
   {
@@ -451,10 +451,10 @@ export const projects = [
     category: 'UNDERGRADUATE RESEARCH · NANOTECHNOLOGY ENGINEERING · UNIVERSITY OF WATERLOO',
     title: 'Engineering Neural Scaffolds for Spinal Cord Regeneration',
     summary:
-      'Research into how biomaterial scaffold composition, architecture, and cell–material interactions may support neural tissue repair following spinal cord injury.',
+      'Undergraduate research examining biomaterial design considerations for neural tissue repair after spinal cord injury.',
     type: 'neural-scaffold',
     context:
-      'Undergraduate research in Nanotechnology Engineering at the University of Waterloo exploring biomaterial scaffolds for spinal cord repair. The work considered neural cell populations and how scaffold architecture, composition, and compatibility shape the injured-tissue environment.',
+      'This University of Waterloo research considered how engineering principles can inform scaffold strategies for a complex regenerative-medicine challenge.',
     problem:
       'Regeneration is affected by specialized neural and supporting cells, inflammation, inhibitory signals, and glial-scar formation. Scaffold properties must be considered alongside cellular responses and the extracellular matrix.',
     approach:
@@ -534,10 +534,10 @@ export const projects = [
     category: 'BIOMEDICAL ENGINEERING · BIOMATERIALS · BIOSENSING · MICROFLUIDICS',
     title: 'Continuous Biochemical Monitoring for Biomedical Applications',
     summary:
-      'A literature-based investigation of blood-contacting biosensor challenges and a proposed microfluidic concept for continuous monitoring of biochemical markers.',
+      'Literature-based analysis of blood-contacting biosensor challenges, with a proposed microfluidic concept for continuous biochemical monitoring.',
     type: 'biochemical',
     context:
-      'A literature-based investigation of continuous blood monitoring, where markers such as glucose, lactate, and electrolytes are often measured intermittently. The project examined how biomaterials, biosensors, and microfluidics could support more reliable monitoring.',
+      'The research addressed the gap between continuous physiological monitoring and intermittent biochemical measurements such as glucose, lactate, and electrolytes.',
     problem:
       'Protein adsorption (including the Vroman effect), platelet activation, complement responses, thrombosis, biofouling, and signal drift can compromise prolonged blood-contacting sensor performance. Reliability depends on sensing mechanism, material selection, surface chemistry, and fluidic design.',
     approach:
