@@ -253,7 +253,7 @@ function App() {
                                   <h4>{section.heading}</h4>
                                   {'paragraphs' in section && section.paragraphs?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
                                   {'bullets' in section && section.bullets && <ul>{section.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>}
-                                  {section.subsections?.map((subsection) => (
+                                  {'subsections' in section && section.subsections?.map((subsection) => (
                                     <div className="detail-subsection" key={subsection.heading}>
                                       <h5>{subsection.heading}</h5>
                                       <ul>{subsection.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
