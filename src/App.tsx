@@ -181,7 +181,7 @@ function App() {
           <div className="hero-copy">
             <p className="eyebrow"><span className="status-dot" /> NANOTECHNOLOGY ENGINEERING · {profile.location.toUpperCase()}</p>
             <h1 id="hero-title">Engineering<br /><em>Materials.</em><br />Building Intelligent<br className="desktop-break" /> Systems.</h1>
-            <p className="hero-deck">Nanotechnology Engineering <span>/</span> Machine Learning <span>/</span> Materials Science <span>/</span> Data &amp; Technology</p>
+            <p className="hero-deck">Nanotechnology Engineering <span>/</span> Materials Research <span>/</span> Data &amp; Machine Learning <span>/</span> Applied Systems</p>
             <p className="hero-intro">{profile.introduction}</p>
             <div className="hero-actions">
               <a className="button button-primary" href="#projects">Explore my work <ArrowDown size={16} /></a>
@@ -224,8 +224,10 @@ function App() {
               <circle className="molecule-glow" cx="197" cy="205" r="35" />
               </svg>
             )}
-            <div className="visual-caption"><span>01 / 04</span><span>{profile.heroImage ? profile.name : 'Structure informs function.'}</span></div>
-            <div className="visual-coordinates">43°39' N<br />79°23' W</div>
+            <div className="visual-caption"><span>{profile.name}</span><span>{profile.heroImage ? 'NANOTECHNOLOGY ENGINEERING' : 'Structure informs function.'}</span></div>
+            <div className="visual-coordinates">
+              {profile.coordinates.split(' / ').map((coordinate) => <span key={coordinate}>{coordinate}</span>)}
+            </div>
           </div>
           <a className="scroll-cue" href="#about"><span>SCROLL TO EXPLORE</span><ArrowDown size={14} /></a>
         </section>
@@ -334,7 +336,7 @@ function App() {
             <div className="contact-main">
               <p className="eyebrow">LET'S CONNECT</p>
               <h2 id="contact-title">Good work starts<br />with a <em>good question.</em></h2>
-              <p className="contact-copy">For engineering, R&amp;D, data, and technology opportunities, I’d be glad to hear from you.</p>
+              <p className="contact-copy">I welcome conversations about engineering, applied research, data, and technology opportunities.</p>
               <div className="contact-links">
                 {profile.email && <a href={`mailto:${profile.email}`}><Mail size={17} />{profile.email}<ArrowUpRight size={15} /></a>}
                 {profile.linkedin && <a href={profile.linkedin} target="_blank" rel="noreferrer"><Linkedin size={17} />LinkedIn<ArrowUpRight size={15} /></a>}

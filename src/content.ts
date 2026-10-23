@@ -4,11 +4,11 @@ export const profile = {
   coordinates: '43.6532° N / 79.3832° W',
   heroImage: '/heroimage.png',
   heroImageAlt: 'Portrait of Eunice Gichuhi',
-  tagline: 'Engineering materials. Building intelligent systems.',
+  tagline: 'Materials engineering · Applied research · Data',
   introduction:
-    'I connect scientific problem-solving with data-driven engineering, turning complex questions into practical technology and research workflows.',
+    'I bring a nanotechnology engineering perspective to materials research, data analysis, and practical technology workflows.',
   about:
-    'My training in nanotechnology engineering gives me a materials-first view of technical problems. Across research projects, data analysis, and technology operations, I have worked where experiments meet computation and where systems need to work in practice. I am interested in applied research and engineering roles that bring those perspectives together.',
+    'With a background in nanotechnology engineering, I approach technical questions through materials, evidence, and practical constraints. My project work spans nanoparticle formulation, optical and microfluidic systems, biomaterials, and data-driven analysis; professional experience has also introduced me to IT operations and workflow improvement. I am interested in roles where careful engineering and clear analysis support useful real-world systems.',
   email: 'EUNICE.GWANJA@GMAIL.COM',
   linkedin: 'https://www.linkedin.com/in/eunicegichuhi',
   github: 'https://github.com/EGichuhi',
@@ -46,14 +46,14 @@ export const experience = [
     organization: 'TELUS International',
     title: 'Data Analyst',
     dates: 'Remote · January – June 2024',
-    highlights: ['98% protocol-adherence accuracy', 'SQL', 'Python', 'Jupyter notebooks', 'AI-generated outputs', 'structured data reviews', 'AI model performance', 'data quality'],
+    highlights: ['98% protocol-adherence accuracy', 'SQL', 'Python', 'AI-generated outputs', 'structured data reviews', 'AI model performance', 'data quality'],
     bullets: [
       'Evaluated AI-generated responses against established quality guidelines, achieving 98% protocol-adherence accuracy across review tasks.',
-      'Used SQL and Python in Jupyter notebooks to analyze datasets, validate information, and identify inconsistencies in AI-generated outputs.',
+      'Used SQL and Python to analyze datasets, validate information, and identify inconsistencies in AI-generated outputs.',
       'Conducted structured data reviews to identify errors, assess response quality, and support improvements in AI model performance.',
       'Applied standardized evaluation criteria to maintain data quality, document findings, and support consistent assessment of AI-generated content.',
     ],
-    tools: ['SQL', 'Jupyter'],
+    tools: ['SQL', 'Python'],
   },
   {
     organization: 'AmLive',
@@ -613,12 +613,20 @@ export const projects = [
 
 export const skillGroups = [
   {
-    title: 'Programming & data',
-    items: ['Python', 'SQL', 'pandas', 'NumPy', 'scikit-learn', 'Jupyter', 'MongoDB', 'ETL & data processing'],
+    title: 'Programming, data & machine learning',
+    items: ['Python', 'SQL', 'pandas', 'NumPy', 'scikit-learn', 'Jupyter', 'MongoDB', 'ETL & data processing', 'Feature engineering', 'Regression models', 'Model evaluation (R², MAE)', 'RDKit molecular descriptors'],
   },
   {
-    title: 'Engineering & research',
-    items: ['Nanomaterials', 'Materials characterization', 'Experimental planning', 'Literature research', 'Optical characterization', 'Microfluidic design', 'COMSOL'],
+    title: 'Materials & biomedical research',
+    items: ['Nanomaterials', 'PLGA formulation analysis', 'Polymer composites', 'Drug-delivery systems', 'Biomaterial scaffolds', 'Neural tissue engineering', 'Cell–material interactions', 'Scientific literature review'],
+  },
+  {
+    title: 'Biosensing & biomaterials',
+    items: ['Electrochemical biosensing', 'Aptamer-based sensing', 'Antifouling surface strategies', 'Blood-contacting materials', 'Biocompatibility considerations', 'Conceptual biomedical system design'],
+  },
+  {
+    title: 'Optics, microfluidics & simulation',
+    items: ['Optical characterization', 'Geometric optics', 'Lens-system integration', 'Microfluidic design', 'AutoCAD', 'COMSOL Multiphysics', 'Simulation-to-experiment comparison'],
   },
   {
     title: 'Laboratory equipment',

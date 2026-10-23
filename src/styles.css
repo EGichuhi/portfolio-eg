@@ -70,9 +70,11 @@ h1 em, h2 em { color: #118f83; font-family: var(--serif); font-weight: 400; }
 .hero-visual::after { inset: 50% 0 auto; border-top: 1px dashed rgba(15, 61, 62, .08); }
 .hero-visual.has-image { background: #e8ede6; }
 .portfolio-image { position: absolute; z-index: 1; inset: 14px; width: calc(100% - 28px); height: calc(100% - 28px); object-fit: contain; }
+.hero-visual.has-image .portfolio-image { inset: 43px 14px 53px; width: calc(100% - 28px); height: calc(100% - 96px); }
 .visual-topline, .visual-caption { position: absolute; z-index: 2; right: 25px; left: 25px; display: flex; justify-content: space-between; color: #6c817b; font-size: 8px; }
 .visual-topline { top: 25px; }
 .visual-caption { bottom: 23px; }
+.hero-visual.has-image .visual-caption { right: 158px; bottom: 17px; }
 .hero-molecule { position: absolute; inset: 9% 6% 8%; width: 88%; height: 83%; overflow: visible; transition: transform .55s cubic-bezier(.2,.7,.2,1); }
 .molecule-lines path { fill: none; stroke: #468d82; stroke-width: 1.1; opacity: .63; }
 .molecule-lines .orbit-line { stroke: #b99634; stroke-dasharray: 2 8; opacity: .68; }
@@ -81,6 +83,7 @@ h1 em, h2 em { color: #118f83; font-family: var(--serif); font-weight: 400; }
 .molecule-nodes .node-core { fill: #157e74; }
 .molecule-glow { fill: none; stroke: #14b8a6; stroke-width: 1; opacity: .38; }
 .visual-coordinates { position: absolute; right: -1px; bottom: 72px; padding: 8px 9px; background: var(--teal); color: #eff8f3; font-size: 7px; line-height: 1.6; }
+.hero-visual.has-image .visual-coordinates { z-index: 3; right: 19px; bottom: 12px; display: grid; gap: 2px; padding: 6px 8px; border: 1px solid rgba(15, 61, 62, .12); background: rgba(15, 61, 62, .94); font-size: 7px; white-space: nowrap; }
 .scroll-cue { position: absolute; bottom: 26px; left: 8.5vw; display: inline-flex; align-items: center; gap: 14px; color: #71807b; font-size: 8px; }
 
 .section-wrap { display: grid; grid-template-columns: 16% 1fr; gap: 5.5%; padding: 106px 10.4vw; border-top: 1px solid var(--line); }
