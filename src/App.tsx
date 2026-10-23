@@ -24,7 +24,7 @@ const navigation = [
 function renderHighlightedText(text: string, highlights: string[] = []) {
   if (!highlights.length) return text
 
-  const escapedHighlights = highlights.map((highlight) =>
+  const escapedHighlights = [...highlights].sort((a, b) => b.length - a.length).map((highlight) =>
     highlight.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'),
   )
   return text.split(new RegExp(`(${escapedHighlights.join('|')})`, 'g')).map((part, index) =>
@@ -52,6 +52,57 @@ function ProjectDiagram({ type }: { type: string }) {
         <text className="diagram-sub" x="260" y="147" textAnchor="middle">LA/GA ratio</text>
         <text className="diagram-label" x="456" y="117" textAnchor="middle">MODELS</text>
         <text className="diagram-sub" x="456" y="139" textAnchor="middle">exploration</text>
+      </svg>
+    )
+  }
+  if (type === 'neural-scaffold') {
+    return (
+      <svg className="diagram-svg neural-scaffold-svg" viewBox="0 0 520 246" role="img" aria-label="Concept illustration of neural axons extending through a porous biomaterial scaffold">
+        <text className="diagram-kicker" x="28" y="31">SCAFFOLD / NEURAL REPAIR</text>
+        <path className="scaffold-rail" d="M76 70 H444 M76 176 H444" />
+        <path className="scaffold-strut" d="M96 70 136 176 M176 70 216 176 M256 70 296 176 M336 70 376 176 M416 70 444 145" />
+        <path className="scaffold-strut scaffold-strut-alt" d="M96 176 136 70 M176 176 216 70 M256 176 296 70 M336 176 376 70 M416 176 444 101" />
+        <path className="axon-path" d="M34 126 C74 126 78 108 113 116 S158 139 194 123 246 108 275 126 328 143 365 120 414 110 486 125" />
+        <path className="axon-branch" d="M194 123 C210 104 219 96 232 91 M275 126 C290 146 302 151 317 156 M365 120 C378 98 389 91 404 86" />
+        <circle className="neuron-body" cx="55" cy="126" r="13" />
+        <circle className="neuron-core" cx="55" cy="126" r="4" />
+        <circle className="axon-node" cx="194" cy="123" r="5" />
+        <circle className="axon-node" cx="275" cy="126" r="5" />
+        <circle className="axon-node" cx="365" cy="120" r="5" />
+        <text className="diagram-label" x="260" y="205" textAnchor="middle">POROUS BIOMATERIAL GUIDANCE</text>
+      </svg>
+    )
+  }
+  if (type === 'biochemical') {
+    return (
+      <svg className="diagram-svg biochemical-svg" viewBox="0 0 520 246" role="img" aria-label="Concept illustration of a proposed arterial line with a side-channel biochemical sensor chamber">
+        <defs>
+          <linearGradient id="arterial-flow" x1="0" x2="1">
+            <stop offset="0" stopColor="#d78472" stopOpacity=".18" />
+            <stop offset="1" stopColor="#bc7168" stopOpacity=".28" />
+          </linearGradient>
+        </defs>
+        <text className="diagram-kicker" x="28" y="31">CONCEPT / CONTINUOUS MONITORING</text>
+        <rect className="arterial-channel" x="22" y="128" width="476" height="62" rx="31" />
+        <path className="arterial-centerline" d="M43 159 H476" />
+        <path className="arterial-arrow" d="M92 159 H147 M139 151 L147 159 L139 167" />
+        <path className="sensor-channel" d="M176 134 V91 H235 M386 91 H427 V134" />
+        <rect className="sensor-chamber" x="235" y="49" width="151" height="84" rx="10" />
+        <path className="chamber-flow" d="M251 91 H370" />
+        <rect className="sensor-element" x="303" y="67" width="17" height="48" rx="8" />
+        <circle className="sensor-node" cx="311.5" cy="91" r="6" />
+        <circle className="analyte-dot analyte-glucose" cx="267" cy="91" r="4" />
+        <circle className="analyte-dot analyte-lactate" cx="349" cy="91" r="4" />
+        <text className="diagram-label" x="310" y="43" textAnchor="middle">SIDE-CHANNEL SENSOR</text>
+        <text className="diagram-sub" x="310" y="119" textAnchor="middle">antifouling interface</text>
+        <text className="diagram-label" x="260" y="158" textAnchor="middle">ARTERIAL LINE</text>
+        <text className="diagram-sub" x="260" y="177" textAnchor="middle">proposed flow path</text>
+        <circle className="analyte-dot analyte-glucose" cx="165" cy="218" r="4" />
+        <text className="diagram-sub" x="175" y="222">glucose</text>
+        <circle className="analyte-dot analyte-lactate" cx="270" cy="218" r="4" />
+        <text className="diagram-sub" x="280" y="222">lactate</text>
+        <circle className="analyte-dot analyte-electrolyte" cx="369" cy="218" r="4" />
+        <text className="diagram-sub" x="379" y="222">electrolytes</text>
       </svg>
     )
   }
@@ -225,7 +276,7 @@ function App() {
           <div className="section-main">
             <div className="section-heading projects-heading">
               <div><p className="eyebrow">QUESTIONS INTO WORKFLOWS</p><h2 id="projects-title">Projects</h2></div>
-              <p className="section-note">Research, modeling, and materials work in progress.</p>
+              <p className="section-note">Materials, nanomedicine, biosensing, and microfluidic design.</p>
             </div>
             <div className="project-list">
               {projects.map((project) => {
@@ -240,42 +291,17 @@ function App() {
                       <button className="detail-toggle" type="button" aria-expanded={isOpen} aria-controls={`project-detail-${project.number}`} onClick={() => setActiveProject(isOpen ? null : project.number)}>
                         {isOpen ? 'Close project details' : 'Explore project'} <ChevronDown size={15} />
                       </button>
-                      {isOpen && (
-                        <div className="project-detail" id={`project-detail-${project.number}`}>
-                          <div className="detail-block"><h4>Overview</h4><p>{project.context}</p></div>
-                          {'detailSections' in project ? (
-                            <>
-                              <div className="detail-block"><h4>{'researchQuestion' in project ? 'Problem statement' : 'Engineering challenge'}</h4><p>{project.problem}</p></div>
-                              {'researchQuestion' in project && <div className="detail-block"><h4>Research question</h4><p>{project.researchQuestion}</p></div>}
-                              <div className="detail-block"><h4>Technical approach</h4><p>{project.approach}</p></div>
-                              {project.detailSections?.map((section) => (
-                                <div className="detail-block" key={section.heading}>
-                                  <h4>{section.heading}</h4>
-                                  {'paragraphs' in section && section.paragraphs?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-                                  {'bullets' in section && section.bullets && <ul>{section.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>}
-                                  {'subsections' in section && section.subsections?.map((subsection) => (
-                                    <div className="detail-subsection" key={subsection.heading}>
-                                      <h5>{subsection.heading}</h5>
-                                      <ul>{subsection.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
-                                    </div>
-                                  ))}
-                                </div>
-                              ))}
-                              <div className="detail-block"><h4>Results and findings</h4><p>{project.findings}</p></div>
-                              <div className="detail-block"><h4>Key takeaways</h4><p>{project.learning}</p></div>
-                            </>
-                          ) : (
-                            <>
-                              <div className="detail-block"><h4>Problem</h4><p>{project.problem}</p></div>
-                              <div className="detail-block"><h4>Technical approach</h4><p>{project.approach}</p></div>
-                              <div className="detail-block"><h4>Tools &amp; technologies</h4><ul className="tag-list">{project.tools.map((tool) => <li key={tool}>{tool}</li>)}</ul></div>
-                              <div className="detail-block"><h4>Results &amp; findings</h4><p>{project.findings}</p></div>
-                              <div className="detail-block"><h4>What I learned</h4><p>{project.learning}</p></div>
-                            </>
-                          )}
-                        </div>
-                      )}
                     </div>
+                    {isOpen && (
+                      <div className="project-detail" id={`project-detail-${project.number}`}>
+                        <div className="detail-block"><h4>Overview</h4><p>{project.context}</p></div>
+                        <div className="detail-block"><h4>Engineering challenge</h4><p>{project.problem}</p></div>
+                        <div className="detail-block"><h4>Approach</h4><p>{project.approach}</p></div>
+                        <div className="detail-block"><h4>Technical areas</h4><ul className="tag-list">{project.tools.map((tool) => <li key={tool}>{tool}</li>)}</ul></div>
+                        <div className="detail-block"><h4>Findings</h4><p>{project.findings}</p></div>
+                        <div className="detail-block"><h4>Takeaway</h4><p>{project.learning}</p></div>
+                      </div>
+                    )}
                     <span className="project-number">{project.number}</span>
                   </article>
                 )

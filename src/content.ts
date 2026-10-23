@@ -20,7 +20,7 @@ export const experience = [
     organization: 'Philip Morris International',
     title: 'B2B IT Intern',
     dates: 'Toronto, ON · April – August 2025',
-    highlights: ['4 internal and external platforms', '2 hours per week', '3 cross-functional teams', '7+ system issues'],
+    highlights: ['4 internal and external platforms', '2 hours per week', '3 cross-functional teams', '7+ system issues', 'data workflows', 'business requirements', 'digital solutions', 'B2B digital tools', 'system testing', 'data accuracy', 'IT operations'],
     bullets: [
       'Integrated data workflows across 4 internal and external platforms, reducing manual processing efforts by 2 hours per week.',
       'Partnered with 3 cross-functional teams to assess business requirements, validate digital solutions, and resolve 7+ system issues, improving system performance and reliability.',
@@ -33,7 +33,7 @@ export const experience = [
     organization: 'Second Bind',
     title: 'Operations Engineer & Technology Intern',
     dates: 'January – April 2025',
-    highlights: ['3 recurring operational processes', '15%'],
+    highlights: ['3 recurring operational processes', '15%', 'automation solutions', 'workflow efficiency', 'process bottlenecks', 'AI-powered tools', 'manual intervention', 'workflow issues', 'reliability of automated processes'],
     bullets: [
       'Implemented automation solutions for 3 recurring operational processes, reducing task completion time by 15% and improving workflow efficiency.',
       'Analyzed existing workflows to identify process bottlenecks and opportunities for automation, supporting more efficient day-to-day operations.',
@@ -46,7 +46,7 @@ export const experience = [
     organization: 'TELUS International',
     title: 'Data Analyst',
     dates: 'Remote · January – June 2024',
-    highlights: ['98%'],
+    highlights: ['98% protocol-adherence accuracy', 'SQL', 'Python', 'Jupyter notebooks', 'AI-generated outputs', 'structured data reviews', 'AI model performance', 'data quality'],
     bullets: [
       'Evaluated AI-generated responses against established quality guidelines, achieving 98% protocol-adherence accuracy across review tasks.',
       'Used SQL and Python in Jupyter notebooks to analyze datasets, validate information, and identify inconsistencies in AI-generated outputs.',
@@ -59,7 +59,7 @@ export const experience = [
     organization: 'AmLive',
     title: 'Data Engineering Intern',
     dates: 'Hybrid · January – April 2023',
-    highlights: ['4%', '3 cross-functional teams'],
+    highlights: ['Python-based ETL workflows', '3 cross-functional teams', '4%', 'data integration', 'pipeline issues', 'MongoDB', 'data consistency and reliability', 'data pipelines', 'data quality issues'],
     bullets: [
       'Developed and maintained Python-based ETL workflows, improving data processing efficiency by 4% through streamlined data transformation procedures.',
       'Collaborated with 3 cross-functional teams to support data integration, troubleshoot pipeline issues, and improve data accessibility.',
@@ -79,70 +79,19 @@ export const projects = [
       'A predictive framework using literature-derived formulation data to explore how PLGA material properties, drug characteristics, and manufacturing parameters relate to nanoparticle outcomes for breast cancer drug delivery.',
     type: 'pipeline',
     context:
-      'Developed a data analysis and machine learning workflow to investigate relationships between formulation characteristics and reported properties of poly(lactic-co-glycolic acid) (PLGA) nanoparticles. Using literature-derived data from a Mendeley dataset, the project explores how formulation variables may relate to encapsulation efficiency, particle size, and drug loading capacity. The goal was to transform published experimental data into a structured dataset suitable for exploratory analysis and predictive modeling.',
+      'This undergraduate project explored how machine learning could help identify promising poly(lactic-co-glycolic acid) (PLGA) nanoparticle formulations for breast cancer drug delivery without relying exclusively on repeated laboratory experiments. Literature-derived data were combined and prepared to investigate relationships between polymer properties, drug characteristics, manufacturing parameters, and encapsulation efficiency, particle size, and drug loading.',
     problem:
-      'PLGA nanoparticle properties can vary with formulation composition and experimental conditions. However, published studies may report different formulations, measurements, and data formats, making comparisons challenging.',
+      'PLGA nanoparticle performance depends on interacting formulation variables, but published studies use different methods and reporting formats. Trial-and-error optimization can require substantial laboratory time and materials.',
     researchQuestion:
-      'Can formulation descriptors extracted from published studies help explain or predict key PLGA nanoparticle properties, including encapsulation efficiency, particle size, and loading capacity?',
+      'Can data from existing research be organized into a machine-learning framework to identify relationships between formulation inputs and key PLGA nanoparticle properties?',
     approach:
-      'The workflow transformed literature-derived experimental data into a structured analytical workflow for exploratory analysis and predictive modeling.',
-    tools: ['Python', 'pandas', 'NumPy', 'scikit-learn', 'Matplotlib'],
+      'Compiled and standardized 348 literature-derived records (approximately 35 breast cancer-specific and 313 broader PLGA formulations). Compared Random Forest, XGBoost, SVR, and GPR using engineered features, an 80/20 split, cross-validation, R², and MAE.',
+    tools: ['Python', 'pandas', 'NumPy', 'scikit-learn', 'Random Forest', 'XGBoost', 'SVR', 'GPR', 'RDKit'],
     findings:
-      'The project established a structured analytical approach for investigating literature-reported PLGA nanoparticle formulations and their associated properties. The workflow highlights the potential of data-driven methods to explore formulation–property relationships while recognizing that conclusions depend on dataset coverage, measurement consistency, and model validation. Quantitative predictive performance and specific formulation trends are not reported here because validated results have not yet been documented in this project summary.',
+      'The report’s feature-importance analysis identifies the PLGA lactide ratio, drug lipophilicity, and synthesis method as important factors. These associations can guide further investigation but do not establish causation. Quantitative model-performance results are not documented here; predictions require validation, ideally against independent formulations and targeted experiments.',
     learning:
-      'This project strengthened my ability to translate literature-derived experimental data into a structured analytical workflow. It also reinforced the importance of feature selection, data quality, clear target definitions, and careful interpretation when applying machine learning to materials science and drug-delivery research.',
+      'The project connected materials science, nanobiotechnology, data analysis, and machine learning around a formulation-optimization problem. It reinforced the importance of consistent data preparation, transparent model evaluation, and experimental validation before computational predictions are used to inform drug-development decisions.',
     detailSections: [
-      {
-        heading: 'Technical approach',
-        subsections: [
-          {
-            heading: '1. Data collection and preparation',
-            bullets: [
-              'Used a Mendeley-hosted dataset containing literature-derived PLGA nanoparticle data as the starting point for analysis.',
-              'Organized relevant formulation descriptors and nanoparticle measurements into a structured tabular format.',
-              'Examined data consistency, variable definitions, and suitability for exploratory analysis and machine learning.',
-            ],
-          },
-          {
-            heading: '2. Feature selection and exploratory analysis',
-            bullets: [
-              'Investigated candidate variables, including encapsulation efficiency (EE), particle size, loading capacity (LC), and the lactide-to-glycolide ratio (LA/GA).',
-              'Explored relationships between formulation characteristics and reported nanoparticle properties.',
-              'Considered the distinction between potential model inputs and target variables to support meaningful prediction tasks.',
-            ],
-          },
-          {
-            heading: '3. Machine learning workflow',
-            bullets: [
-              'Used Python, pandas, and NumPy for data manipulation and feature preparation.',
-              'Developed a scikit-learn workflow to establish a foundation for modeling formulation–property relationships.',
-              'Used Matplotlib to support data visualization and interpretation of observed patterns.',
-            ],
-          },
-          {
-            heading: '4. Evaluation and interpretation',
-            bullets: [
-              'Framed model development around predicting selected nanoparticle properties from relevant formulation descriptors.',
-              'Recognized the importance of data quality, consistent measurement definitions, and appropriate evaluation when combining results from different published studies.',
-            ],
-          },
-        ],
-      },
-      {
-        heading: 'Tools and technologies',
-        bullets: [
-          'Python: Data processing and analytical workflow development',
-          'pandas and NumPy: Tabular data manipulation and numerical operations',
-          'scikit-learn: Machine learning workflow development',
-          'Matplotlib: Data visualization and exploratory analysis',
-        ],
-      },
-      {
-        heading: 'Potential applications',
-        paragraphs: [
-          'The workflow provides a foundation for further investigation of PLGA formulation design, including identifying candidate formulation variables for follow-up analysis and evaluating whether published data can support reliable property prediction.',
-        ],
-      },
       {
         heading: 'Project overview and objectives',
         paragraphs: [
@@ -324,16 +273,16 @@ export const projects = [
       'Developed and evaluated a PMMA optical coating containing purchased NaYF₄:Er³⁺ upconversion nanoparticles, then integrated the lens element into a three-lens monocular prototype.',
     type: 'optics',
     context:
-      'Developed a portable optical system to investigate conversion of near-infrared (NIR) excitation into visible light using an upconversion nanoparticle–polymer composite lens. This multidisciplinary engineering project investigated the integration of commercially purchased NaYF₄:Er³⁺ upconversion nanoparticles (UCNPs) into a polymethyl methacrylate (PMMA) matrix as an optical coating for a monocular viewing system. Rather than synthesizing the nanoparticles, I characterized the materials, prepared PMMA solutions, compared composite formulations at different nanoparticle loadings, and used dynamic light scattering (DLS), UV–Vis spectroscopy, and scanning electron microscopy (SEM) to investigate particle-size distributions, optical characteristics, and coating morphology. Selected formulations were deposited onto PMMA lens substrates and integrated into a three-lens monocular prototype with a custom 3D-printed enclosure. Intermediate characterization results were promising, but the completed optical system demonstrated limited visible upconversion, highlighting the challenge of translating material-level observations into effective integrated-device performance.',
+      'Investigated near-infrared-to-visible upconversion using purchased NaYF₄:Er³⁺ nanoparticles in a PMMA lens coating. Formulations were characterized and a selected coating was integrated into a three-lens monocular prototype.',
     problem:
-      'The central challenge was to develop a transparent, lightweight optical component that could interact with near-infrared excitation and generate visible emission without significantly degrading image clarity. The composite needed sufficient nanoparticle loading for detectable upconverted emission, while excessive loading or aggregation could increase scattering, create haze, and reduce transmitted-image quality. The film also had to be integrated into an optical system with suitable lens geometry, component spacing, mechanical packaging, and environmental durability. Customer design requirements were at least 5% upconversion efficiency, at least 85% lens transparency, a tunable focal-length range of 10–50 mm, overall device length below 15 cm, diameter below 3 cm, weight below 100 g, and target lens cost below CAD $50. These were design requirements, not all verified final achievements.',
+      'Balance nanoparticle loading for optical activity against transparency, aggregation, and scattering while integrating the film into a portable optical system. Design targets included at least 85% transparency, at least 5% efficiency, 10–50 mm focal length, under 15 cm length, under 3 cm diameter, under 100 g mass, and lens cost below CAD $50; these were requirements, not verified outcomes.',
     approach:
-      'Purchased NaYF₄:Er³⁺ nanoparticles were characterized and combined with PMMA dissolved in chloroform. Formulations at 2 wt% and 5 wt% UCNP loading were compared using DLS, UV–Vis spectroscopy, and SEM; selected composites were spin-coated onto PMMA lens substrates and integrated into a three-lens monocular. The prototype was assessed through theoretical calculations and practical mechanical tests.',
+      'Compared 2 wt% and 5 wt% UCNP–PMMA formulations using DLS, UV–Vis, and SEM. Selected films were spin-coated onto a PMMA lens and integrated into a three-lens monocular; the prototype also underwent calculations and mechanical drop tests.',
     tools: ['NaYF₄:Er³⁺ UCNPs', 'PMMA', 'Chloroform', 'DLS', 'UV–Vis spectroscopy', 'SEM', 'Spin coating', '980 nm NIR excitation', 'Geometric optics', '3D-printed enclosure'],
     findings:
-      'The 5 wt% composite exhibited a stronger measured optical signal than the 2 wt% formulation, and layer count also influenced the spectral response. Broader DLS distributions in composite samples suggested possible aggregation or heterogeneous dispersion. Despite promising intermediate characterization results, the completed monocular showed limited visible upconversion, demonstrating that material preparation, coating quality, optical alignment, excitation conditions, and conversion efficiency must work together. The approximately 5% efficiency value was a design benchmark, not a measured efficiency of the completed prototype.',
+      'The 5 wt% composite showed a stronger optical signal than 2 wt%, while broader DLS distributions suggested possible aggregation. The integrated monocular showed limited visible upconversion; 5% efficiency was a design target, not a measured result.',
     learning:
-      'This project connected materials engineering with optical-system design, from characterization of purchased nanoparticles and polymer-composite formulation through coating fabrication and prototype testing. It strengthened my understanding of how dispersion behaviour, nanoparticle loading, film thickness, optical transmission, and system geometry interact. Most importantly, it demonstrated the value of evaluating materials both in the laboratory and at the integrated-device level: a promising formulation is only one part of a successful engineering solution and must be validated in its intended system.',
+      'Material-level characterization does not guarantee device-level performance. Dispersion, loading, coating thickness, optical alignment, and excitation conditions must be evaluated together in the integrated system.',
     detailSections: [
       {
         heading: 'Materials and experimental methodology',
@@ -485,14 +434,14 @@ export const projects = [
       'Designed a Y-junction and serpentine microfluidic device in AutoCAD, evaluated it in COMSOL Multiphysics, then fabricated and tested it in a laboratory.',
     type: 'microfluidic',
     context:
-      'Designed a microfluidic device featuring a Y-shaped starting junction and a serpentine channel layout. The design was developed in AutoCAD, transferred to COMSOL Multiphysics for simulation, and then fabricated and tested in a laboratory. The project focused on connecting digital design and simulation with physical experimentation to demonstrate fluid behaviour in a compact microchannel network. This project applied computational modeling to microfluidic device design.',
+      'Designed a microfluidic device featuring a Y-shaped starting junction and a serpentine channel layout. The design was developed in AutoCAD, transferred to COMSOL Multiphysics for simulation, and then fabricated and tested in a laboratory to connect digital design and computational evaluation with physical observation in a compact microchannel network.',
     problem:
       'A microfluidic design needs to be evaluated against its intended flow behavior, geometry, and operating constraints before fabrication. The device geometry incorporated a Y-shaped junction as the starting section of the channel network, a serpentine channel to create a winding flow path within a compact footprint, and compact device geometry designed to make fluid behaviour observable during laboratory testing.',
     approach:
       'The work involved defining a design objective and using COMSOL simulation to examine relevant engineering considerations. The device geometry was created in AutoCAD and transferred into COMSOL Multiphysics to evaluate its expected behaviour before fabrication.',
     tools: ['AutoCAD', 'COMSOL Multiphysics', '3D CAD modelling', 'Microfluidic design', 'Simulation-based evaluation', 'Device fabrication', 'Laboratory experimentation', 'Experimental observation'],
     findings:
-      'Following simulation, the device was fabricated and used in a laboratory experiment. Images were captured to document the observed behaviour within the microchannels. The experimental observations were consistent with the behaviour expected from the COMSOL simulation, providing a practical comparison between the digital model and the fabricated design. The project used computational modeling to examine microfluidic device design considerations.',
+      'Following simulation, the device was fabricated and used in a laboratory experiment. Images documented the observed behaviour within the microchannels, and experimental observations were consistent with the behaviour expected from the COMSOL simulation, providing a practical comparison between the digital model and fabricated design.',
     learning:
       'Model assumptions and boundary conditions are central to making a simulation useful for engineering decisions. The project demonstrated an end-to-end engineering workflow, from CAD design and computational evaluation to fabrication and experimental testing. It strengthened my experience in 3D device design, multiphysics simulation, and validating engineering designs through physical experiments.',
     visualLabel: 'Microchannel layout',
@@ -503,18 +452,18 @@ export const projects = [
     title: 'Engineering Neural Scaffolds for Spinal Cord Regeneration',
     summary:
       'Research into how biomaterial scaffold composition, architecture, and cell–material interactions may support neural tissue repair following spinal cord injury.',
-    type: 'materials',
+    type: 'neural-scaffold',
     context:
-      'As an undergraduate research project in Nanotechnology Engineering at the University of Waterloo, this work explored the application of biomaterial scaffolds in spinal cord regeneration. The research examined biological challenges associated with spinal cord regeneration, the roles of different neural cell populations, and interactions between scaffold properties and the cellular microenvironment. A central focus was understanding how scaffold architecture, material composition, and biological compatibility influence the environment surrounding injured neural tissue. These factors are important when investigating strategies to support cell survival, neural growth, tissue organization, and the potential restoration of neural connections.',
+      'Undergraduate research in Nanotechnology Engineering at the University of Waterloo exploring biomaterial scaffolds for spinal cord repair. The work considered neural cell populations and how scaffold architecture, composition, and compatibility shape the injured-tissue environment.',
     problem:
-      'Spinal cord repair involves specialized neural and supporting cell populations, a complex injury environment, and biological conditions that can inhibit regeneration. Scaffold composition and architecture must be considered alongside cellular responses and interactions with the surrounding extracellular matrix. Understanding these interdependent factors is important when exploring how engineered materials may provide a more supportive environment for neural repair.',
+      'Regeneration is affected by specialized neural and supporting cells, inflammation, inhibitory signals, and glial-scar formation. Scaffold properties must be considered alongside cellular responses and the extracellular matrix.',
     approach:
-      'Conducted a research-focused investigation of neural cell populations, scaffold materials and structural design, cell–material interactions, neural growth, and biomaterial characterization considerations relevant to spinal cord regeneration.',
+      'Reviewed neural cell roles, scaffold materials and architecture, cell–material interactions, neural growth, and characterization considerations for spinal cord regeneration.',
     tools: ['Tissue engineering', 'Neural regeneration', 'Biomaterial scaffolds', 'Neural cell biology', 'Cell differentiation', 'Cell–material interactions', 'Extracellular matrix', 'Material characterization', 'Scientific literature review'],
     findings:
-      'The research highlighted that scaffold composition, architecture, and cellular interactions must be considered together when investigating strategies for spinal cord repair. Scaffold properties may influence cell survival, migration, differentiation, axonal extension, and tissue organization, while inflammation, inhibitory signals, and glial-scar formation remain important biological challenges. This work provides a research framework and does not claim a fabricated scaffold or experimentally demonstrated regenerative outcome.',
+      'Scaffold design may influence cell survival, migration, differentiation, axonal growth, and tissue organization. This research does not claim a fabricated scaffold or experimentally demonstrated regenerative outcome.',
     learning:
-      'This research explored the intersection of nanotechnology, biomaterials, and regenerative medicine. It provided a framework for understanding how engineering principles can be applied to complex biological challenges, particularly where tissue structure, specialized cell populations, and the surrounding injury environment influence regenerative potential.',
+      'Neural scaffold design requires balancing material architecture and mechanics with cellular interactions and the biology of the injury environment.',
     detailSections: [
       {
         heading: 'Neural cell types and regenerative processes',
@@ -578,7 +527,7 @@ export const projects = [
         ],
       },
     ],
-    visualLabel: 'Material structure',
+    visualLabel: 'Neural scaffold concept',
   },
   {
     number: '05',
@@ -586,18 +535,18 @@ export const projects = [
     title: 'Continuous Biochemical Monitoring for Biomedical Applications',
     summary:
       'A literature-based investigation of blood-contacting biosensor challenges and a proposed microfluidic concept for continuous monitoring of biochemical markers.',
-    type: 'materials',
+    type: 'biochemical',
     context:
-      'This research project explored the challenges of continuous biochemical monitoring in blood and investigated how advances in biomaterials, microfluidics, and biosensor design could support more reliable biomedical monitoring systems. Physiological parameters such as blood pressure can be monitored continuously, while biochemical markers such as glucose, lactate, and electrolytes are often measured intermittently. Continuous monitoring could provide more frequent insight into changes in a patient’s biochemical state, but reliable sensors in direct contact with blood present significant engineering challenges.',
+      'A literature-based investigation of continuous blood monitoring, where markers such as glucose, lactate, and electrolytes are often measured intermittently. The project examined how biomaterials, biosensors, and microfluidics could support more reliable monitoring.',
     problem:
-      'Blood is a complex biological environment that can compromise sensor performance over time. Protein adsorption, including the Vroman effect, can alter the sensor–blood interface, while platelet activation, complement responses, and thrombosis create additional blood-compatibility concerns. Biofouling and sensor signal drift can also reduce measurement reliability during prolonged operation. Sensor performance therefore depends not only on the sensing mechanism, but also on material selection, surface chemistry, and the surrounding fluidic-system design.',
+      'Protein adsorption (including the Vroman effect), platelet activation, complement responses, thrombosis, biofouling, and signal drift can compromise prolonged blood-contacting sensor performance. Reliability depends on sensing mechanism, material selection, surface chemistry, and fluidic design.',
     approach:
-      'Conducted a research analysis of existing continuous monitoring technologies, blood-contacting materials, antifouling strategies, and electrochemical biosensing approaches. The project also developed a proposed smart arterial-line concept with a side microchannel and sensor chamber. The SENSBIT device is discussed as an example reported in published research; its experiments were not conducted or independently verified as part of this project. The arterial-line system is a conceptual proposal, not a fabricated or experimentally validated device.',
+      'Reviewed monitoring technologies, antifouling materials, and electrochemical aptamer sensing, including SENSBIT as a published example. Proposed a smart arterial-line concept with a side-channel sensor chamber; it was not built or experimentally validated.',
     tools: ['Biomedical research', 'Literature review', 'Biomaterials', 'Antifouling surface engineering', 'Electrochemical biosensors', 'Aptamer-based sensing', 'Microfluidics', 'Conceptual engineering design'],
     findings:
-      'The research analysis highlighted that continuous biochemical monitoring requires more than a sensitive detection mechanism. Reliable operation also depends on the interaction between sensing materials and blood, prevention of surface fouling, and maintenance of stable signals over time. Combining electrochemical sensing with antifouling materials and microfluidic design may offer a route toward addressing these interconnected challenges. Published SENSBIT performance findings are attributed to the referenced literature and were not independently tested or verified in this project.',
+      'Reliable monitoring requires stable sensing, blood-compatible materials, and control of surface fouling. Combining electrochemical sensing, antifouling interfaces, and microfluidics may help address these challenges. SENSBIT results are from published literature and were not independently verified.',
     learning:
-      'This project connected nanobiotechnology, biomaterials, electrochemical sensing, and microfluidic system design to investigate a significant biomedical engineering challenge: achieving reliable, continuous biochemical measurements in a complex biological environment.',
+      'Continuous biochemical sensing is a systems challenge: sensor chemistry, blood-contacting materials, and fluidic design must work together in a complex biological environment.',
     detailSections: [
       {
         heading: 'Research objectives',
